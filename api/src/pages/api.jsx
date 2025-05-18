@@ -92,7 +92,7 @@ const API = () => {
         Generate Quote
       </button>
       <div className="h-10"></div>
-      <div className=" p-6 m-5 text-center bg-white rounded-3xl">
+      <div className=" p-6 m-5 text-center bg-white rounded-3xl shadow-md">
         {quote && (
           <div>
             <p className=" text-base text-blue-950 mb-4">
