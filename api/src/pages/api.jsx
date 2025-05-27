@@ -92,18 +92,20 @@ const API = () => {
         Generate Quote
       </button>
       <div className="h-10"></div>
-      <div className=" p-6 m-5 text-center bg-white rounded-3xl shadow-md">
-        {quote && (
-          <div>
-            <p className=" text-base text-blue-950 mb-4">
-              Which character said this quote?
-            </p>
-            <p className="text-lg italic">"{quote.quote}"</p>
-          </div>
+      <div className="min-w-[300px] min-h-[120px] p-6 m-5 text-center bg-white rounded-3xl shadow-md flex flex-col justify-center">
+        <p className="text-base text-blue-950 mb-4">
+          Which character said this quote?
+        </p>
+        {quote ? (
+          <p className="text-lg italic">"{quote.quote}"</p>
+        ) : (
+          <p className="text-lg italic text-gray-400">
+            Click the button to start the quizz
+          </p>
         )}
       </div>
 
-      {answer && <div className="p-5text-xl font-semibold mb-4">{answer}</div>}
+      {answer && <div className="p-5 text-xl font-semibold mb-4">{answer}</div>}
       <div className="flex flex-wrap gap-4 mt-4">
         {characters.map((char) => (
           <button
