@@ -84,7 +84,9 @@ const API = () => {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-blue-50">
-      <h1 className="text-6xl font-bold mb-4">Star Wars Quotes</h1>
+      <h1 className="md:text-6xl text-4xl font-bold text-center mb-4">
+        Star Wars Quotes
+      </h1>
       <button
         onClick={fetchData}
         className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
@@ -106,7 +108,7 @@ const API = () => {
       </div>
 
       {answer && <div className="p-5 text-xl font-semibold mb-4">{answer}</div>}
-      <div className="flex flex-wrap gap-4 mt-4">
+      <div className="flex flex-wrap justify-center gap-3 md:gap-4 mt-4">
         {characters.map((char) => (
           <button
             key={char.name}
@@ -114,15 +116,17 @@ const API = () => {
             className="flex flex-col items-center focus:outline-none"
             disabled={!quote}
           >
-            <div className="h-8"></div>
+            <div className="h-4 lg:h-8"></div>
 
             <img
               src={char.image}
               alt={char.label}
-              className="w-20 h-20 rounded-full border-4 border-blue-300 hover:border-yellow-400 transition"
+              className="md:w-20 md:h-20 h-10 w-10 rounded-full border-2 md:border-4 border-blue-300 hover:border-yellow-400 transition"
               style={{ objectFit: "cover" }}
             />
-            <span className="mt-2 text-sm font-medium">{char.label}</span>
+            <span className="mt-2 text-xs md:text-sm font-medium">
+              {char.label}
+            </span>
           </button>
         ))}
       </div>
